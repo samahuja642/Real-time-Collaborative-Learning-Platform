@@ -1,17 +1,7 @@
-const Joi = require('joi');
-
-const signUpSchema = Joi.object({
-    email: Joi.string().email().required(),
-    password: Joi.string().required(),
-    name: Joi.string().required(),
-})
-
-const loginSchema = Joi.object({
-    email: Joi.string().email().required(),
-    password: Joi.string().required(),
-});
+const userValidations = require('./user');
+const groupValidtations = require('./group');
 
 module.exports = {
-    signUpSchema,
-    loginSchema
-}
+    ...userValidations,
+    ...groupValidtations,
+};

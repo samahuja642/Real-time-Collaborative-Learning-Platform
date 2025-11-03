@@ -9,11 +9,24 @@ const CACHE_TIME = {
     VERY_LONG:6000,
 }
 
+const ROLES = {
+    STUDENT: 'student',
+    TEACHER: 'teacher',
+    ADMIN: 'admin',
+};
+
+const GROUP_ROLES = {
+    OWNER: 'owner',
+    MANAGER: 'manager',
+    MEMBER: 'member',
+};
+
 const REDIS_KEYS = {
     ROLE: (roleName) => `role:${roleName}`,
     VERIFY_EMAIL: (uid,email) => `verify-email:${uid}-${email}`, 
     USER_BY_EMAIL: (email) => `user-by-email:${email}`,
     OTP: (userId) => `otp-user:${userId}`,
+    ROLES: () => `roles`,
     // USER: (userId) => `user:${userId}`,
     // OTP: (userId) => `otp:${userId}`,
     // GROUP: (groupId) => `group:${groupId}`,
@@ -26,4 +39,6 @@ module.exports = {
     EMAIL_VERIFICATION_TIME,
     CACHE_TIME,
     REDIS_KEYS,
+    ROLES,
+    GROUP_ROLES,
 }

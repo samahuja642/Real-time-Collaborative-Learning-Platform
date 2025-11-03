@@ -51,6 +51,14 @@ const deleteCachedOtpData = async (userId) => {
     return await redis.del(REDIS_KEYS.OTP(userId));
 }
 
+const cacheRolesData = async (data) => {
+    return await redis.set(REDIS_KEYS.ROLES(),JSON.stringify(data));
+}
+
+const getCachedRolesData = async () => {
+    return JSON.parse(await redis.get(REDIS_KEYS.ROLES()));
+}
+
 module.exports = {
     getCachedRoleId,
     setUserToCache,
@@ -60,4 +68,6 @@ module.exports = {
     getCachedOtpData,
     setCachedOtpData,
     deleteCachedOtpData,
+    cacheRolesData,
+    getCachedRolesData,
 }

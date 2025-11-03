@@ -149,6 +149,25 @@ exports.Prisma.UserOtpScalarFieldEnum = {
   updatedAt: 'updatedAt'
 };
 
+exports.Prisma.GroupScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  description: 'description',
+  logo: 'logo',
+  creatorId: 'creatorId',
+  ownerId: 'ownerId',
+  createdAt: 'createdAt'
+};
+
+exports.Prisma.GroupMemberScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  groupId: 'groupId',
+  role: 'role',
+  joinedAt: 'joinedAt',
+  joinedUsing: 'joinedUsing'
+};
+
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -159,12 +178,19 @@ exports.Prisma.QueryMode = {
   insensitive: 'insensitive'
 };
 
+exports.Prisma.NullsOrder = {
+  first: 'first',
+  last: 'last'
+};
+
 
 exports.Prisma.ModelName = {
   User: 'User',
   Role: 'Role',
   UserRole: 'UserRole',
-  UserOtp: 'UserOtp'
+  UserOtp: 'UserOtp',
+  Group: 'Group',
+  GroupMember: 'GroupMember'
 };
 
 /**

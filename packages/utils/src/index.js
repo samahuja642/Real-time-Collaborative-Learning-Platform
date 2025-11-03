@@ -18,5 +18,6 @@ module.exports = {
   ...require("./errors/AppError"),
   ...require("./middlewares/errorHandler"),
   ...require("./middlewares/sanitizeRequests"),
+  ...require("./middlewares/authMiddleware"),
   ...require("./libs/redis"),
 };
